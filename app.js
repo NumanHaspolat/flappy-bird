@@ -63,9 +63,7 @@ window.onload = function () {
   setInterval(placePipes, 1500); //every 1.5 seconds
   document.addEventListener("keydown", moveBird);
   document.addEventListener("touchstart", function (event) {
-    if (event.touches[0].pageX > window.innerWidth / 2) {
-      moveBird();
-    }
+    moveBird(true);
   });
 };
 
@@ -158,11 +156,18 @@ function placePipes() {
 }
 
 function moveBird(e) {
-  if (e.code == "Space" || e.code == "ArrowUp" || e.code == "KeyX") {
-    //jump
+  // Klavye veya fare olayları gibi dokunmatik olayları ele alın
+  if (
+    e.code == "Space" ||
+    e.code == "ArrowUp" ||
+    e.code == "KeyX" ||
+    e.type == "mousedown" ||
+    e.type == "touchstart"
+  ) {
+    // zıpla
     velocityY = -6;
 
-    //reset game
+    // oyunu sıfırla
     if (gameOver) {
       bird.y = birdY;
       pipeArray = [];
@@ -171,7 +176,6 @@ function moveBird(e) {
     }
   }
 }
-
 function detectCollision(a, b) {
   return (
     a.x < b.x + b.width && //a's top left corner doesn't reach b's top right corner
@@ -180,3 +184,6 @@ function detectCollision(a, b) {
     a.y + a.height > b.y
   ); //a's bottom left corner passes b's top left corner
 }
+
+document.addEventListener("keydown", moveBird);
+document.addEventListener("mousedown", moveBird);
