@@ -63,7 +63,9 @@ window.onload = function () {
   setInterval(placePipes, 1500); //every 1.5 seconds
   document.addEventListener("keydown", moveBird);
   document.addEventListener("touchstart", function (event) {
-    moveBird();
+    if (event.touches[0].pageX > window.innerWidth / 2) {
+      moveBird();
+    }
   });
 };
 
