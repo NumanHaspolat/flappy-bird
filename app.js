@@ -113,7 +113,7 @@ function update() {
 
   //score
 
-  context.fillStyle = "darkgreen";
+  context.fillStyle = "black";
   context.font = "20px sans-serif";
   context.fillText("Top Score: " + topScore, 5, 20);
   context.fillText("Score: " + score, 5, 45);
@@ -187,3 +187,5 @@ function detectCollision(a, b) {
 
 document.addEventListener("keydown", moveBird);
 document.addEventListener("mousedown", moveBird);
+
+//******************* LeaderBoard **********************//

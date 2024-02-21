@@ -1,7 +1,7 @@
 body {
   font-family: "Courier New", Courier, monospace;
   text-align: center;
-  background-color: rgb(12, 87, 64);
+  background-color: #71c5cf;
   margin: 0;
   user-select: none;
   overflow: hidden;
@@ -9,20 +9,29 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-image: url(./bg-intro-desktop.png);
+}
+
+.a {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 #game-container {
   position: relative;
   max-width: 600px;
   border: 1px solid #5c5c5c;
-  padding: 2rem;
-  background-color: #1e1e1e;
+  padding: 1rem;
+  background-color: #134c5e;
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 4rem;
+}
+
+.me {
+  padding-top: 2rem;
+  color: white;
 }
 
 #controls {
@@ -30,16 +39,6 @@ body {
   justify-content: space-between;
   width: 100%;
   margin-top: 1rem;
-}
-
-.button {
-  background-color: darkgreen;
-  color: lightgreen;
-  border: 2px solid lightgreen;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  font-weight: 600;
-  cursor: pointer;
 }
 
 .arrow-container {
