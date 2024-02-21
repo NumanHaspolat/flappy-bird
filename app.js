@@ -156,7 +156,6 @@ function placePipes() {
 }
 
 function moveBird(e) {
-  // Klavye veya fare olayları gibi dokunmatik olayları ele alın
   if (
     e.code == "Space" ||
     e.code == "ArrowUp" ||
@@ -189,3 +188,13 @@ document.addEventListener("keydown", moveBird);
 document.addEventListener("mousedown", moveBird);
 
 //******************* LeaderBoard **********************//
+
+//!
+const tuna = document.querySelector(".tuna");
+const me = document.getElementsByClassName("me");
+
+tuna.addEventListener("click", () => {
+  Array.from(me).forEach((element) => {
+    element.classList.toggle("d-ok");
+  });
+});

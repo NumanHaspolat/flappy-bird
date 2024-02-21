@@ -22,7 +22,7 @@ body {
   max-width: 600px;
   border: 1px solid #5c5c5c;
   padding: 1rem;
-  background-color: #134c5e;
+  background-color: #0a333f;
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
@@ -32,6 +32,16 @@ body {
 .me {
   padding-top: 2rem;
   color: white;
+  display: none;
+}
+
+.tuna {
+  background-color: black;
+  color: white;
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.2rem;
+  border: none;
+  margin-top: 1rem;
 }
 
 #controls {
@@ -98,4 +108,8 @@ p {
   font-weight: 600;
   margin: 1rem;
   color: lightgreen;
+}
+
+.d-ok {
+  display: flex;
 }
