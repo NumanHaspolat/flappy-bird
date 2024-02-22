@@ -116,7 +116,7 @@ function update() {
   //score
 
   context.fillStyle = "black";
-  context.font = "20px sans-serif";
+  context.font = "20px monospace";
   context.fillText("Top Score: " + topScore, 5, 20);
   context.fillText("Score: " + score, 5, 45);
 
@@ -192,12 +192,33 @@ document.addEventListener("mousedown", moveBird);
 
 //******************* LeaderBoard **********************//
 
-//!
-const tuna = document.querySelector(".tuna");
-const me = document.getElementsByClassName("me");
+// const tuna = document.querySelector(".tuna");
+// const me = document.getElementsByClassName("me");
 
-tuna.addEventListener("click", () => {
-  Array.from(me).forEach((element) => {
-    element.classList.toggle("d-ok");
-  });
+// tuna.addEventListener("click", () => {
+//   Array.from(me).forEach((element) => {
+//     element.classList.toggle("d-ok");
+//   });
+// });
+
+let immortal = false;
+let baseVelocityX = -2;
+let boostedVelocityX = -10;
+
+window.addEventListener("keydown", (e) => {
+  if (e.key === "n") {
+    immortal = !immortal;
+    velocityX = immortal ? boostedVelocityX : baseVelocityX;
+  }
 });
+
+function detectCollision(a, b) {
+  if (immortal) return false;
+
+  return (
+    a.x < b.x + b.width &&
+    a.x + a.width > b.x &&
+    a.y < b.y + b.height &&
+    a.y + a.height > b.y
+  );
+}

@@ -1,5 +1,5 @@
 body {
-  font-family: "Courier New", Courier, monospace;
+  font-family: monospace;
   text-align: center;
   background-color: #71c5cf;
   margin: 0;
@@ -12,6 +12,12 @@ body {
 }
 
 .a {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.leaderboard {
   display: flex;
   flex-direction: column;
   gap: 1rem;
