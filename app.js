@@ -3,6 +3,8 @@ let board;
 let boardWidth = 360;
 let boardHeight = 640;
 let context;
+// Ses dosyası
+let jumpSound = new Audio("a.mp3");
 
 //bird
 let birdWidth = 34; //width/height ratio = 408/228 = 17/12
@@ -164,9 +166,10 @@ function moveBird(e) {
     e.type == "touchstart"
   ) {
     // zıpla
-    velocityY = -6;
+    velocityY = -7;
+    jumpSound.currentTime = 0;
+    jumpSound.play();
 
-    // oyunu sıfırla
     if (gameOver) {
       bird.y = birdY;
       pipeArray = [];
